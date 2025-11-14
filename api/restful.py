@@ -1,5 +1,3 @@
-from typing import Any
-
 from fastapi import APIRouter
 
 from api.datatypes import Pet, Pop, get_random_pet, get_random_pop
@@ -7,13 +5,11 @@ from api.datatypes import Pet, Pop, get_random_pet, get_random_pop
 router = APIRouter()
 
 
-@router.get("/items/{item_id}")
-def read_item(item_id: int, q: str | None = None) -> dict[str, Any]:
-    return {"item_id": item_id, "q": q}
+type ReturnPet = dict[str, int | str | list[dict[str, int | dict[str, int | str]]]]
 
 
-def get_random_pet_output(pet: Pet) -> dict:
-    pet_dict = {
+def get_random_pet_output(pet: Pet) -> ReturnPet:
+    pet_dict: ReturnPet = {
         "id": pet.id,
         "name": pet.name,
         "pats": [],
@@ -32,8 +28,11 @@ def get_random_pet_output(pet: Pet) -> dict:
     return pet_dict
 
 
-def get_random_pop_output(pop: Pop) -> dict:
-    pop_dict = {
+type ReturnPop = dict[str, int | str | list[dict[str, int | dict[str, int | str]]]]
+
+
+def get_random_pop_output(pop: Pop) -> ReturnPop:
+    pop_dict: ReturnPop = {
         "id": pop.id,
         "name": pop.name,
         "pats": [],
@@ -53,12 +52,12 @@ def get_random_pop_output(pop: Pop) -> dict:
 
 
 @router.get("/pets/{name}")
-def get_pet(name: str) -> dict:
+def get_pet(name: str) -> ReturnPet:
     pet = get_random_pet(name)
     return get_random_pet_output(pet)
 
 
 @router.get("/pops/{name}")
-def get_pop(name: str) -> dict:
+def get_pop(name: str) -> ReturnPop:
     pet = get_random_pop(name)
     return get_random_pop_output(pet)
