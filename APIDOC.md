@@ -82,9 +82,11 @@ TODO -->
 
 TODO -->
 
-<!-- ## Websockets
+## Websockets
 
-TODO -->
+The Websocket endpoints don't show up in the Swagger docs, but its endpoint is exposed here:
+
+ws://localhost:8008/websocket/ws
 
 <!-- ## XML-RPC
 

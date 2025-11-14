@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
-from api import doc, restful
+from api import doc, restful, websocket
 
 app = FastAPI(title="API Playground", description="A simple set of example endpoints")
 
@@ -12,3 +12,4 @@ def read_docs() -> HTMLResponse:
 
 
 app.include_router(restful.router, prefix="/restful", tags=["RESTful"])
+app.include_router(websocket.router, prefix="/websocket", tags=["Websocket"])
