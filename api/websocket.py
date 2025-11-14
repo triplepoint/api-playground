@@ -13,8 +13,10 @@ async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     while True:
         data = await websocket.receive()
+
         pet = get_random_pet("Sparky")
         pet_output = get_random_pet_output(pet)
+        
         await websocket.send_json(
             {
                 "message": f"Server received: {data}",
