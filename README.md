@@ -2,8 +2,9 @@
 
 I found myself recently needing an example API service against which to demonstrate an API client.
 
-The service in this container is intended to demonstrate several different API protocols, hosting nonsense
-data for example purposes. See the API Documentation page for the details.
+The immediate need was for a set of RESTful GET demo endpoints, but I'll leave room for other protocols.
+
+See the API Documentation page for the details.
 
 # Pre-requisites
 

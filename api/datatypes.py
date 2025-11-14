@@ -1,9 +1,9 @@
 import random
-from dataclasses import dataclass
+
+from pydantic import BaseModel
 
 
-@dataclass
-class Pet:
+class Pet(BaseModel):
     """Pets which are Patted by Pops"""
 
     id: int
@@ -11,8 +11,7 @@ class Pet:
     pats: list[Pat]
 
 
-@dataclass
-class Pop:
+class Pop(BaseModel):
     """Pops who Pat Pets"""
 
     id: int
@@ -20,8 +19,7 @@ class Pop:
     pats: list[Pat]
 
 
-@dataclass
-class Pat:
+class Pat(BaseModel):
     """Pats patted on Pets by Pops"""
 
     id: int

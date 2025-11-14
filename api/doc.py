@@ -7,7 +7,8 @@ def html() -> str:
         md = f.read()
     return """<!DOCTYPE html>
 <style>
-    html { font-family: sans; background: #222; color: white; } a:visited { color: red; }
+    html { font-family: sans; background: #222; color: white; }
+    a:visited { color: red; }
     code.language-mermaid svg { background: #AAA; }
     code.language-python { width: 1000px;}
 </style>

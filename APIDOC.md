@@ -62,30 +62,30 @@ erDiagram
 
 The provided protocols and endpoints are:
 
-## GraphQL
+<!-- ## GraphQL
 
-TODO
+TODO -->
 
-## gRPC
+<!-- ## gRPC
 
-TODO
+TODO -->
 
-## JSON-RPC
+<!-- ## JSON-RPC
 
-TODO
+TODO -->
 
 ## RESTful
 
 [Endpoint documentation available here](/docs#/RESTful).
 
-## SOAP
+<!-- ## SOAP
 
-TODO
+TODO -->
 
-## Websockets
+<!-- ## Websockets
 
-TODO
+TODO -->
 
-## XML-RPC
+<!-- ## XML-RPC
 
-TODO
+TODO -->
