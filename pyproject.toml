@@ -6,6 +6,43 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "fastapi[standard]>=0.121.2",
-    "markdown>=3.10",
+    "mistune>=3.1.4",
     "requests>=2.32.5",
+]
+
+[dependency-groups]
+dev = [
+    "bandit>=1.8.6",
+    "mypy>=1.18.2",
+    "ruff>=0.14.5",
+    "types-markdown>=3.10.0.20251106",
+]
+
+[tool.bandit]
+exclude_dirs = [".venv"]
+skips = [
+    "B101", # Skip assert_used for tests
+    "B105", # hardcocded password string - getting false positives on token_type
+    "B106", # Sameas B105, but for function args
+]
+
+[tool.mypy]
+check_untyped_defs = true
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle
+    "F",   # Pyflakes
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "I",   # isort
+]
+ignore = [
+    "B904",   # Within except clause, raise exceptions with raise ... from err (sometimes not needed)
+    "E402",   # Module level import not at top of file
+    "SIM115", # Use context manager for opening files (test setup)
 ]
